@@ -1,0 +1,480 @@
+:root {
+  --primary: #4a6bff;
+  --bg: #f7f9fb;
+  --text: #222;
+  --card-bg: rgba(255,255,255,0.7);
+  --glass-blur: 16px;
+  --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --radius: 1.5rem;
+  --transition: 0.3s cubic-bezier(.4,0,.2,1);
+  --font-main: 'Poppins', Arial, sans-serif;
+}
+
+[data-theme="dark"] {
+  --primary: #4a6bff;
+  --bg: #181c24;
+  --text: #f7f9fb;
+  --card-bg: rgba(30,34,44,0.7);
+  --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+}
+
+/* استيراد خط Tajawal من Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
+
+/* تعيين خط Tajawal لكل الموقع */
+body, .btn, .card, .navbar, h1, h2, h3, h4, h5, h6, .card-title, .card-text, .skill-label {
+  font-family: 'Tajawal', 'Poppins', Arial, sans-serif !important;
+}
+
+/* Body & Typography */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+  transition: background var(--transition), color var(--transition);
+}
+
+/* Navbar Glass Effect */
+.navbar {
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-top: 1rem;
+  transition: background var(--transition);
+}
+
+/* Navbar Brand */
+.navbar-brand {
+  color: var(--primary) !important;
+  letter-spacing: 1px;
+}
+
+/* Navbar Links */
+.nav-link {
+  transition: color var(--transition), background var(--transition);
+  border-radius: .5rem;
+  margin: 0 .25rem;
+}
+.nav-link.active,
+.nav-link:hover {
+  color: #fff !important;
+  background: var(--primary);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  border-radius: 50%;
+  transition: background var(--transition), color var(--transition);
+}
+#theme-toggle:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Hero Section Glassmorphism */
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary) 0%, #a1b8ff 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.hero .container {
+  background: var(--card-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 3rem 2rem;
+  max-width: 600px;
+  margin: auto;
+  transition: background var(--transition);
+}
+.hero-img img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-top: 1.5rem;
+}
+
+/* CTA Button */
+.btn-primary, .btn-outline-primary:hover {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #fff !important;
+  box-shadow: 0 2px 12px 0 rgba(74,107,255,0.15);
+  transition: box-shadow var(--transition), background var(--transition);
+}
+.btn-primary:hover, .btn-outline-primary:focus {
+  background: #233b8c !important;
+  border-color: #233b8c !important;
+}
+
+/* Cards Glassmorphism */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+.card:hover {
+  transform: translateY(-8px) scale(1.03) rotate(-1deg);
+  box-shadow: 0 16px 40px 0 rgba(74,107,255,0.18);
+}
+.card-title {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* جعل محتوى البطاقات في الوسط */
+.card .card-body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+.card .card-title,
+.card .card-text,
+.card .btn {
+  text-align: center;
+  width: 100%;
+}
+
+/* تحسين مظهر الكارد */
+.card {
+  background: rgba(255,255,255,0.85);
+  border: none;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(74,107,255,0.10), 0 1.5px 6px 0 rgba(0,0,0,0.04);
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s cubic-bezier(.4,0,.2,1), background 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  background: linear-gradient(120deg, #f7f9fb 60%, #e3eaff 100%);
+  box-shadow: 0 16px 40px 0 rgba(74,107,255,0.16), 0 2px 12px 0 rgba(0,0,0,0.08);
+}
+
+.card-img-top {
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  max-height: 180px;
+  object-fit: cover;
+  background: #f3f6fa;
+}
+
+.card-title {
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: #233b8c;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.card-text {
+  color: #444;
+  font-size: 1.05rem;
+  margin-bottom: 1.1rem;
+}
+
+.card .btn {
+  border-radius: 2rem;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  margin-top: auto;
+}
+
+/* تحسين مظهر الأزرار */
+.btn-primary, .btn-outline-primary {
+  font-family: 'Tajawal', 'Poppins', Arial, sans-serif !important;
+  letter-spacing: 0.5px;
+}
+
+/* تحسين مظهر المهارات */
+.skill-label {
+  font-family: 'Tajawal', 'Poppins', Arial, sans-serif !important;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+  background: var(--card-bg) !important;
+  color: var(--text);
+  border-radius: var(--radius) var(--radius) 0 0;
+  box-shadow: var(--shadow);
+  margin-top: 2rem;
+  transition: background var(--transition);
+}
+.footer a {
+  color: var(--primary);
+  font-size: 1.3rem;
+  transition: color var(--transition);
+}
+.footer a:hover {
+  color: #233b8c;
+}
+
+/* Micro-interactions & Animations */
+.card,
+.btn,
+.nav-link,
+#theme-toggle {
+  will-change: transform, box-shadow, background, color;
+}
+
+/* Section spacing */
+section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Custom scrollbar for modern look */
+body::-webkit-scrollbar {
+  width: 10px;
+  background: var(--bg);
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 8px;
+}
+
+/* Animations for hero section */
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.hero .container {
+  animation: heroFadeIn 1.2s cubic-bezier(.4,0,.2,1);
+}
+
+/* Animations for cards */
+@keyframes cardAppear {
+  from { opacity: 0; transform: scale(0.95);}
+  to { opacity: 1; transform: scale(1);}
+}
+.card {
+  animation: cardAppear 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+/* الوضع الافتراضي (النهار) */
+body, .hero {
+  background: linear-gradient(120deg, #4a6bff 0%, #a1b8ff 100%) !important;
+}
+
+/* الوضع الليلي */
+[data-theme="dark"] body,
+[data-theme="dark"] .hero {
+  background: linear-gradient(120deg, #232946 0%, #1a1a2e 100%) !important;
+}
+
+[data-theme="dark"] .profile-banner {
+  background: linear-gradient(90deg, #232946 60%, #1a1a2e 100%) !important;
+  border-color: #23294633 !important;
+  color: #fff !important;
+}
+
+[data-theme="dark"] .glass-card,
+[data-theme="dark"] .card {
+  background: rgba(35,41,70,0.85) !important;
+  color: #fff !important;
+}
+
+[data-theme="dark"] .profile-title,
+[data-theme="dark"] .profile-subtitle,
+[data-theme="dark"] .profile-desc {
+  color: #fff !important;
+}
+
+/* تحسين لون النص في الوضع الليلي */
+[data-theme="dark"] .card-title,
+[data-theme="dark"] .card-text,
+[data-theme="dark"] .skill-label {
+  color: #e3eaff !important;
+}
+
+/* مؤثر خاص لبطاقات معرض الصور */
+.gallery-card .gallery-img-wrapper {
+  overflow: hidden;
+  border-radius: 1.2rem 1.2rem 0 0;
+  perspective: 600px;
+}
+
+.gallery-card .gallery-img {
+  transition: transform 0.7s cubic-bezier(.4,0,.2,1), box-shadow 0.4s;
+  will-change: transform;
+}
+
+/* عند المرور: تدور وتتمايل دورة كاملة */
+.gallery-card:hover .gallery-img,
+.gallery-card:focus-within .gallery-img {
+  transform: rotateY(360deg) scale(1.08) skewY(-4deg);
+  box-shadow: 0 12px 32px 0 rgba(106,76,147,0.18);
+  z-index: 2;
+}
+
+/* شريط متحرك بخلفية شفافة وخط ينبض متعدد الألوان */
+.moving-bar {
+    background: linear-gradient(90deg, #6a4c93cc 60%, #4a6bffcc 100%);
+    color: #fff;
+    overflow: hidden;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1030;
+    font-family: 'Tajawal', 'Poppins', Arial, sans-serif;
+    margin-top: 0;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 12px 0 rgba(106,76,147,0.08);
+}
+
+.moving-text {
+    white-space: nowrap;
+    display: inline-block;
+    animation: moveBar 36s linear infinite; /* سرعة أبطأ */
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding-left: 100vw;
+}
+
+.moving-text span {
+    background: linear-gradient(90deg, #000, #fff, #ff0000, #19c419, #000);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rainbowText 3.5s linear infinite, pulseText 1.2s ease-in-out infinite;
+    font-weight: 900;
+}
+
+@keyframes moveBar {
+    0% { transform: translateX(0);}
+    100% { transform: translateX(-120vw);}
+}
+
+@keyframes rainbowText {
+    0% { background-position: 0% 50%;}
+    50% { background-position: 100% 50%;}
+    100% { background-position: 0% 50%;}
+}
+
+@keyframes pulseText {
+    0%, 100% { text-shadow: 0 0 8px #fff6, 0 0 16px #ff000088; }
+    50% { text-shadow: 0 0 18px #19c419, 0 0 32px #000; }
+}
+
+/* زر العودة للرئيسية دائماً ظاهر وأنيق */
+#back-to-top {
+    position: fixed;
+    bottom: 32px;
+    left: 32px;
+    z-index: 1200;
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    background: linear-gradient(120deg, #6a4c93 60%, #4a6bff 100%);
+    color: #fff !important;
+    border: none;
+    box-shadow: 0 8px 32px 0 rgba(74,107,255,0.18);
+    opacity: 0.93;
+    transition: background 0.3s, box-shadow 0.3s, opacity 0.3s, transform 0.2s;
+    outline: none;
+}
+#back-to-top:hover, #back-to-top:focus {
+    background: linear-gradient(120deg, #4a6bff 60%, #6a4c93 100%);
+    box-shadow: 0 16px 48px 0 rgba(106,76,147,0.22);
+    opacity: 1;
+    transform: scale(1.08) translateY(-4px);
+}
+
+/* الوضع الليلي */
+[data-theme="dark"] #back-to-top {
+    background: linear-gradient(120deg, #232946 60%, #6a4c93 100%);
+    color: #fff !important;
+    box-shadow: 0 8px 32px 0 rgba(106,76,147,0.22);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .hero .container {
+    padding: 2rem 1rem;
+  }
+  .card .card-body {
+    min-height: 180px;
+    padding: 1.2rem 0.5rem;
+  }
+  .card-title {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 991px) {
+  .navbar {
+    margin-top: 0.5rem;
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
+  .hero .container {
+    max-width: 100%;
+  }
+}
+@media (max-width: 575px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero .container {
+    padding: 1.2rem 0.5rem;
+  }
+  .footer {
+    font-size: 0.95rem;
+  }
+}
+
+/* إخفاء الشريط العلوي (Navbar) افتراضياً */
+.navbar {
+  transition: transform 0.5s cubic-bezier(.4,0,.2,1), box-shadow 0.3s;
+  transform: translateY(-100%);
+  z-index: 1050;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* عند اقتراب المؤشر من أعلى الصفحة يظهر الشريط */
+body:hover .navbar,
+.navbar:hover,
+.navbar:focus-within {
+  transform: translateY(0);
+  box-shadow: 0 4px 24px 0 rgba(74,107,255,0.10);
+}
+
+/* حتى لا يغطي محتوى الصفحة */
+body {
+  padding-top: 90px;
+}
+
+/* Utility classes */
+.rounded-4 {
+  border-radius: 1.5rem !important;
+}
+.shadow-lg {
+  box-shadow: 0 16px 40px 0 rgba(74,107,255,0.12) !important;
+}
+
+/* ظل أغمق لبطاقة الواجهة الرئيسية */
+.hero .d-flex.flex-column.flex-md-row.align-items-center.justify-content-center {
+    box-shadow: 0 12px 48px 0 rgba(60, 40, 90, 0.28), 0 2px 12px 0 rgba(0,0,0,0.13) !important;
+}
